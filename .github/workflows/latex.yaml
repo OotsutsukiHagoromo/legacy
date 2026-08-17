@@ -16,7 +16,7 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           root_file: legacy.tex
-          args: --shell-escape
+          args: -shell-escape
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
