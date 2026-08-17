@@ -14,4 +14,26 @@
 \renewcommand{\sfdefault}{ftx}
 \renewcommand{\familydefault}{\sfdefault}
 
+% ============================ minted ===============================
+
 \usepackage{minted}
+
+\setminted{
+  style=friendly,
+  linenos,
+  numbersep=8pt,
+  breaklines,
+  autogobble,
+  tabsize=4%,
+}
+
+% Новые окружения
+% \begin{...} ... \end{...}
+\newminted{html}{}  % htmlcode
+\newminted{latex}{} % latexcode
+
+% Новые команды для внутристрочных вставок
+\newmintinline[htmlinline]{html}{}   % \htmlinline{...}
+\newmintinline[latexinline]{latex}{} % \latexinline{...}
+
+% vim:tw=69
