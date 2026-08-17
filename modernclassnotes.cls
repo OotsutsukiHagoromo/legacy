@@ -51,11 +51,14 @@
 \RequirePackage{caption}
 \RequirePackage{booktabs}
 \RequirePackage{array}
-\RequirePackage{enumerate}
+% \RequirePackage{enumerate}
 \RequirePackage{iftex}
 \RequirePackage{verbatim}
 \RequirePackage{xparse}    % for \NewDocumentCommand
-\IfFileExists{enumitem.sty}{\RequirePackage[shortlabels]{enumitem}}{}
+
+% enumitem есть в стандартных поставках всех (La)TeX-репозиториев;
+% при его загрузке не нужен enumerate. — Rikudo
+\RequirePackage[shortlabels]{enumitem}
 
 \ifmcn@parskip
   \RequirePackage{parskip}
