@@ -1,4 +1,4 @@
-name: Build LaTeX
+name: Build PDF
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Compile LaTeX
+      - name: Build
         uses: xu-cheng/latex-action@v4
         with:
           root_file: legacy.tex
