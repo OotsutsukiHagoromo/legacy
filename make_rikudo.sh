@@ -8,18 +8,19 @@
 # — Rikudo
 
 outdir="/tmp/legacy"
+name=legacy
 
 do_pdflatex() {
 	pdflatex \
 		--shell-escape \
 		--output-directory "$outdir" \
-		main.tex
+		$name.tex
 }
 
 do_biblatex() {
 	biber \
 		--output-directory "$outdir" \
-		main
+		$name
 }
 
 if [[ ! -a "$outdir" ]]

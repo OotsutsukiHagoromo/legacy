@@ -390,7 +390,7 @@
 \newcounter{lecture}
 \newcommand{\lecture}[3][]{% [date]{number}{title}
   \refstepcounter{lecture}%
-  \def\mcn@currentlecture{Лекция #2: #3}%
+  \def\mcn@currentlecture{Лекция #2. #3}%
   \par\vspace{1.2em}%
   \noindent
   \colorbox{mcnBoxBg}{%
@@ -406,7 +406,7 @@
       \vspace{6pt}%
     \end{minipage}%
   }%
-  \addcontentsline{toc}{section}{Лекция #2: #3}%
+  \addcontentsline{toc}{section}{Лекция #2. #3}%
   \par\vspace{0.8em}%
 }
 
