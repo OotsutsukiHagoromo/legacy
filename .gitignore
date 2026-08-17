@@ -9,3 +9,6 @@
 # vim artifacts
 *~
 .*~
+
+# minted
+_minted/*
