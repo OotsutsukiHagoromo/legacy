@@ -5,6 +5,7 @@
 *.out
 *.toc
 *.gz
+.DS_Store
 
 # vim artifacts
 *~
