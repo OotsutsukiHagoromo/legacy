@@ -1,39 +1,12 @@
-% Перенесено в classnotes.sty
-% \usepackage[T2A]{fontenc}
+% Здесь находится преамбула.
+%
+% Чтобы было проще ориентироваться, куски преамбулы распиханы по
+% разным файлам.
+%
+% fonts — настройка шрифтов
+% code  — отображение вставок кода
 
-% Делаем с main, чтобы подгрузились настройки переносов и прочего
-\usepackage[english, main=russian]{babel}
-
-\usepackage{pscyr}
-
-% -------------------------------------------------------------------
-% Переопределение для корректной работы пакета modernclassnotes
-% -------------------------------------------------------------------
-
-\renewcommand{\rmdefault}{ftx}
-\renewcommand{\sfdefault}{ftx}
-\renewcommand{\familydefault}{\sfdefault}
-
-% ============================ minted ===============================
-
-\usepackage{minted}
-
-\setminted{
-  style=friendly,
-  linenos,
-  numbersep=8pt,
-  breaklines,
-  autogobble,
-  tabsize=4%,
-}
-
-% Новые окружения
-% \begin{...} ... \end{...}
-\newminted{html}{}  % htmlcode
-\newminted{latex}{} % latexcode
-
-% Новые команды для внутристрочных вставок
-\newmintinline[htmlinline]{html}{}   % \htmlinline{...}
-\newmintinline[latexinline]{latex}{} % \latexinline{...}
+\input{fonts}
+\input{code}
 
 % vim:tw=69

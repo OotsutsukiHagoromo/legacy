@@ -1,0 +1,23 @@
+% Настройка шрифтов происходит тут
+
+% Убрали babel; вместо него будет polyglossia и XeLaTeX
+% Делаем с main, чтобы подгрузились настройки переносов и прочего
+% \usepackage[english, main=russian]{babel}
+
+% ---------------------------- XeLaTeX ------------------------------
+
+\usepackage[babelshorthands]{polyglossia}
+\usepackage[no-math]{fontspec}
+
+% -------------------------------------------------------------------
+
+\usepackage{pscyr}
+
+\renewcommand{\rmdefault}{ftx}
+\renewcommand{\sfdefault}{ftx}
+\renewcommand{\familydefault}{\sfdefault}
+
+% -------------------------------------------------------------------
+
+
+% vim:tw=69
