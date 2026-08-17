@@ -9,9 +9,11 @@
 
 outdir="/tmp/legacy"
 name=legacy
+# latexengine=pdflatex
+latexengine=xelatex
 
 do_pdflatex() {
-	pdflatex \
+	$latexengine \
 		--shell-escape \
 		--output-directory "$outdir" \
 		$name.tex
