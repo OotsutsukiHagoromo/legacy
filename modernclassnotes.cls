@@ -41,7 +41,7 @@
 % Core Dependencies
 % -------------------------------------------------------------------
 %\RequirePackage[utf8]{inputenc} % not needed when using xelatex / modern LaTeX2e
-\RequirePackage[T1]{fontenc}
+\RequirePackage[T2A,T1]{fontenc}
 \RequirePackage{xcolor}
 \RequirePackage{geometry}
 \RequirePackage{amsmath,amssymb,amsthm}

@@ -5,3 +5,7 @@
 *.out
 *.toc
 *.gz
+
+# vim artifacts
+*~
+.*~
