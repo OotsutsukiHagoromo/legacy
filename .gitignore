@@ -5,3 +5,10 @@
 *.out
 *.toc
 *.gz
+
+# vim artifacts
+*~
+.*~
+
+# minted
+_minted/*
