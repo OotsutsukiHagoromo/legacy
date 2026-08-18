@@ -41,7 +41,7 @@
 % Core Dependencies
 % -------------------------------------------------------------------
 %\RequirePackage[utf8]{inputenc} % not needed when using xelatex / modern LaTeX2e
-\RequirePackage[T2A,T1]{fontenc}
+\RequirePackage[T1]{fontenc}
 \RequirePackage{xcolor}
 \RequirePackage{geometry}
 \RequirePackage{amsmath,amssymb,amsthm}
@@ -51,14 +51,11 @@
 \RequirePackage{caption}
 \RequirePackage{booktabs}
 \RequirePackage{array}
-% \RequirePackage{enumerate}
+\RequirePackage{enumerate}
 \RequirePackage{iftex}
 \RequirePackage{verbatim}
 \RequirePackage{xparse}    % for \NewDocumentCommand
-
-% enumitem есть в стандартных поставках всех (La)TeX-репозиториев;
-% при его загрузке не нужен enumerate. — Rikudo
-\RequirePackage[shortlabels]{enumitem}
+\IfFileExists{enumitem.sty}{\RequirePackage[shortlabels]{enumitem}}{}
 
 \ifmcn@parskip
   \RequirePackage{parskip}
@@ -390,7 +387,7 @@
 \newcounter{lecture}
 \newcommand{\lecture}[3][]{% [date]{number}{title}
   \refstepcounter{lecture}%
-  \def\mcn@currentlecture{Лекция #2. #3}%
+  \def\mcn@currentlecture{Лекция #2: #3}%
   \par\vspace{1.2em}%
   \noindent
   \colorbox{mcnBoxBg}{%
@@ -406,7 +403,7 @@
       \vspace{6pt}%
     \end{minipage}%
   }%
-  \addcontentsline{toc}{section}{Лекция #2. #3}%
+  \addcontentsline{toc}{section}{Лекция #2: #3}%
   \par\vspace{0.8em}%
 }
 
@@ -689,11 +686,15 @@
 \RequirePackage{hyperref}
 \hypersetup{
   colorlinks=true,
-  linkcolor=mcnPrimary,
-  citecolor=mcnSecondary,
-  urlcolor=mcnSecondary,
+  linkcolor=mcnCalloutBorder,
+  citecolor=mcnCalloutBorder,
+  urlcolor=mcnCalloutBorder,
   pdfborder={0 0 0},
   breaklinks=true
 }
+% Подчёркивание для \href (hyperref сам по себе не подчёркивает colorlinks)
+\let\mcn@oldhref\href
+\renewcommand{\href}[2]{\mcn@oldhref{#1}{\underline{#2}}}
+\urlstyle{same}
 
 \endinput
