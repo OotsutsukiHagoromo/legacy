@@ -42,4 +42,5 @@ sed -E -f <путь_к_основному_каталогу>/sed/redact.sed your_
   sed -E -f <путь_к_основному_каталогу>/sed/redact.sed > your_file
   ```
 
-# vim:ts=2:sw=2:expandtab
+
+vim:ts=2:sw=2:expandtab
