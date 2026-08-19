@@ -1,0 +1,32 @@
+% ============================ minted ===============================
+
+\usepackage{minted}
+
+\setminted{
+	style=friendly,
+	linenos,
+	numbersep=8pt,
+	breaklines,
+	autogobble,
+	tabsize=4,
+	bgcolor=mcnBg
+}
+
+\usepackage{graphicx}
+
+% https://tex.stackexchange.com/a/617816
+% \makeatletter
+% \graphicspath{{\input@path/img/}}
+% \makeatother
+
+
+% Новые окружения
+% \begin{...} ... \end{...}
+\newminted{html}{}  % htmlcode
+\newminted{latex}{} % latexcode
+
+% Новые команды для внутристрочных вставок
+\newmintinline[htmlinline]{html}{}   % \htmlinline{...}
+\newmintinline[latexinline]{latex}{} % \latexinline{...}
+
+% vim:ts=2:sw=2:tw=68
