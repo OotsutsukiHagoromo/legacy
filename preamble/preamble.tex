@@ -1,58 +1,6 @@
-% Перенесено в classnotes.sty
-% \usepackage[T2A]{fontenc}
-
-% Делаем с main, чтобы подгрузились настройки переносов и прочего
-\usepackage[english, main=russian]{babel}
-
-\usepackage{pscyr}
-
-% -------------------------------------------------------------------
-% Переопределение для корректной работы пакета modernclassnotes
-% -------------------------------------------------------------------
-
-\renewcommand{\rmdefault}{ftx}
-\renewcommand{\sfdefault}{ftx}
-\renewcommand{\familydefault}{\sfdefault}
-
-% ======================== Микротипография ==========================
-
-\usepackage[%
-	kerning=true,
-	spacing=true,
-	protrusion=true,
-	babel=true,
-	factor=1000
-]{microtype}
-
-% ============================ minted ===============================
-
-\usepackage{minted}
-
-\setminted{
-	style=friendly,
-	linenos,
-	numbersep=8pt,
-	breaklines,
-	autogobble,
-	tabsize=4,
-	bgcolor=mcnBg
-}
-
-\usepackage{graphicx}
-
-% https://tex.stackexchange.com/a/617816
-% \makeatletter
-% \graphicspath{{\input@path/img/}}
-% \makeatother
+\subimport{.}{fonts}
+\subimport{.}{code}
+\subimport{.}{other_commands}
 
 
-% Новые окружения
-% \begin{...} ... \end{...}
-\newminted{html}{}  % htmlcode
-\newminted{latex}{} % latexcode
-
-% Новые команды для внутристрочных вставок
-\newmintinline[htmlinline]{html}{}   % \htmlinline{...}
-\newmintinline[latexinline]{latex}{} % \latexinline{...}
-
-% vim:tw=69
+% vim:ts=2:sw=2:tw=68
