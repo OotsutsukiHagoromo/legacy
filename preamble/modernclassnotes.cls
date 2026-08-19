@@ -565,6 +565,16 @@
 	\mcn@callout{\mcn@title}{\usebox{\mcn@box}}%
 }
 
+\newenvironment{attentionbox}[1]{%
+	\def\mcn@title{#1}%
+	\begin{lrbox}{\mcn@box}%
+	\begin{minipage}{\dimexpr\linewidth-24pt\relax}%
+}{%
+	\end{minipage}%
+	\end{lrbox}%
+	\mcn@callout{\mcn@title}{\usebox{\mcn@box}}%
+}
+
 \newenvironment{example}[1][]{%
 	\refstepcounter{mcnExampleCount}%
 	\def\mcn@title{Пример \themcnExampleCount\ifx&#1&\else\ (#1)\fi}%
