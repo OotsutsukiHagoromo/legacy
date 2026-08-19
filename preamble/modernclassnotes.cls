@@ -698,10 +698,11 @@
 	breaklinks=true
 }
 
+\RequirePackage{soul}
+
 % Подчёркивание для \href (hyperref сам по себе не подчёркивает colorlinks)
 \let\mcn@oldhref\href
-\renewcommand{\href}[2]{\mcn@oldhref{#1}{\underline{#2}}}
+\renewcommand{\href}[2]{\mcn@oldhref{#1}{\ul{#2}}}
 \urlstyle{same}
-% \endinput
 
 % vim:ts=2:sw=2:tw=68
