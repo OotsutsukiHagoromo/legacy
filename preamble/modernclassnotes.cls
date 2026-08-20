@@ -56,11 +56,14 @@
 \RequirePackage{xparse}      % for \NewDocumentCommand
 
 % enumitem есть в стандартных поставках всех (La)TeX-репозиториев;
-% при его загрузке не нужен enumerate. — Rikudo
+% при его загрузке не нужен enumerate. — Rikudo  
 \RequirePackage[shortlabels]{enumitem}
+\RequirePackage{transparent}   % 🟆 Костыль для прозрачности в подчеркиваниях 
+
+
 
 \ifmcn@parskip
-	\RequirePackage{parskip}
+	\RequirePackage{parskip} 
 \fi
 
 % Geometry configuration based on mode
@@ -76,6 +79,7 @@
 \expandafter\ifstrequal\expandafter{\mcn@mode}{chapternotes}{%
 	\geometry{a4paper, top=2.0cm, bottom=2.0cm, left=2.0cm, right=2.0cm, headheight=28pt, headsep=12pt}%
 }{}
+
 
 % -------------------------------------------------------------------
 % Itemize bullet point symbols config
@@ -708,11 +712,35 @@
 	breaklinks=true
 }
 
-\RequirePackage{soul}
+% -------------------------------------------------------------------
+% 🟆 Тестовый костыль для прозрачности в подчеркиваниях. Не спрашивай,
+% как это работает. На переносах гарантированно ломается.
+% -------------------------------------------------------------------
+\newsavebox{\mcnUnderlineBox}
+\newlength{\mcnUnderlineGap}
+\setlength{\mcnUnderlineGap}{0.7ex}
+\newlength{\mcnUnderlineThickness}
+\setlength{\mcnUnderlineThickness}{0.5pt}
+\newcommand{\mcnUnderlineOpacity}{0.45}
+
+\newcommand{\mcnUnderline}[1]{%
+  \savebox{\mcnUnderlineBox}{#1}%
+  \rlap{\raisebox{-\mcnUnderlineGap}{%
+    \color{mcnCalloutBorder}%
+    \transparent{\mcnUnderlineOpacity}{\rule{\wd\mcnUnderlineBox}{\mcnUnderlineThickness}}%
+  }}#1%
+}
+
+% 🟆 Зачем?
+%\RequirePackage{soul}  
 
 % Подчёркивание для \href (hyperref сам по себе не подчёркивает colorlinks)
-\let\mcn@oldhref\href
-\renewcommand{\href}[2]{\mcn@oldhref{#1}{\ul{#2}}}
+\AtBeginDocument{%
+  \let\mcn@oldhref\href
+  \renewcommand{\href}[2]{\mcn@oldhref{#1}{\mcnUnderline{#2}}}
+}
 \urlstyle{same}
+
+
 
 % vim:ts=2:sw=2:tw=68
