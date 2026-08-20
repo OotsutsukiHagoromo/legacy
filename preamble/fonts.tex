@@ -9,13 +9,21 @@
 \usepackage[babelshorthands]{polyglossia}
 \usepackage[no-math]{fontspec}
 
+\IfFontExistsTF{%
+	fonts/Lebowski/Lebowski_by_Pragmatica_Regular.otf%
+}{%
+	\typeout{found at .}%
+}{%
+	\typeout{not found}%
+}
+
 \setmainfont{Lebowski}[
-	Path = ../fonts/Lebowski,
+	Path = ./fonts/Lebowski/,
 	UprightFont = Lebowski_by_Pragmatica_Regular.otf
 ]
 
 \setmonofont{SpaceGrotesk}[
-	Path = ../fonts/Space_Grotesk,
+	Path = ./fonts/Space_Grotesk/,
 	UprightFont = SpaceGrotesk-VariableFont_wght.ttf
 ]
 
