@@ -1,0 +1,27 @@
+\usepackage{caption}
+
+\DeclareCaptionLabelSeparator{dot}{. }
+
+% #1 is the caption label
+% #2 is the separator
+% #3 is the text
+\DeclareCaptionFormat{mycaptionformat}{%
+	% #1#2~%
+	#3%
+}
+
+% #1 is the name (pic, fig, ...)
+% #2 is the number
+\DeclareCaptionLabelFormat{mycaptionlabelformat}{%
+	% #1~#2%
+}
+
+\captionsetup{%
+  margin=2\parindent,%
+  font=small,%
+  labelsep=dot,%
+	format=mycaptionformat,%
+	labelformat=mycaptionlabelformat,%
+	justification=centerlast%
+}
+
