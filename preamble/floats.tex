@@ -25,3 +25,18 @@
 	justification=centerlast%
 }
 
+
+\usepackage{graphicx}
+\usepackage{adjustbox}
+
+\newlength{\bookcolwidth}
+\setlength{\bookcolwidth}{0.32\textwidth}
+
+\newcommand{\bookitem}[3]{%
+  \begin{minipage}[t]{\bookcolwidth}
+    \adjincludegraphics[width=\linewidth,height=8cm,keepaspectratio=false]{#1}\\[0.3em]
+    \textbf{#2}\\
+    \textit{#3}
+  \end{minipage}%
+}
+
