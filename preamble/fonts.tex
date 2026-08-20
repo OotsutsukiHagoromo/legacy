@@ -5,12 +5,6 @@
 % \usepackage[english, main=russian]{babel}
 
 % ---------------------------- XeLaTeX ------------------------------
-
-\usepackage[babelshorthands]{polyglossia}
-\setdefaultlanguage{ru}
-\setotherlanguage{en}
-\usebabelshorthands{ru}
-
 \usepackage[no-math]{fontspec}
 
 \IfFontExistsTF{%
@@ -21,16 +15,30 @@
 	\typeout{not found}%
 }
 
-\setmainfont{Lebowski}[
+\setmonofont{Lebowski}[
 	Path        = ./fonts/Lebowski/,
 	UprightFont = Lebowski_by_Pragmatica_Regular.otf
 ]
 
-\setmonofont{SpaceGrotesk}[
+\setmainfont{SpaceGrotesk}[
 	Path        = ./fonts/Space_Grotesk/static/,
 	UprightFont = SpaceGrotesk-Regular.ttf,
 	BoldFont    = SpaceGrotesk-SemiBold.ttf
 ]
+
+\newfontfamily{\cyrillicfont}{SpaceGrotesk}[
+	Path        = ./fonts/Space_Grotesk/static/,
+	UprightFont = SpaceGrotesk-Regular.ttf,
+	BoldFont    = SpaceGrotesk-SemiBold.ttf
+]
+
+\let\cyrillicfontsf=\cyrillicfont
+
+
+\usepackage[babelshorthands]{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\usebabelshorthands{russian}
 
 % -------------------------------------------------------------------
 
