@@ -9,19 +9,29 @@
 \usepackage[babelshorthands]{polyglossia}
 \usepackage[no-math]{fontspec}
 
+\setmainfont{Lebowski}[
+	Path = ../fonts/Lebowski,
+	UprightFont = Lebowski_by_Pragmatica_Regular.otf
+]
+
+\setmonofont{SpaceGrotesk}[
+	Path = ../fonts/Space_Grotesk,
+	UprightFont = SpaceGrotesk-VariableFont_wght.ttf
+]
+
 % -------------------------------------------------------------------
 
-\usepackage{pscyr}
+% \usepackage{pscyr}
 
-\renewcommand{\rmdefault}{ftx}
-\renewcommand{\sfdefault}{ftx}
-\renewcommand{\familydefault}{\sfdefault}
+% \renewcommand{\rmdefault}{ftx}
+% \renewcommand{\sfdefault}{ftx}
+% \renewcommand{\familydefault}{\sfdefault}
 
 % ======================== Микротипография ==========================
 
 \usepackage[%
-	kerning=true,
-	spacing=true,
+	% kerning=true,
+	% spacing=true,
 	protrusion=true,
 	babel=true,
 	factor=1000
