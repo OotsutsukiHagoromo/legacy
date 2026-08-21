@@ -1,19 +1,18 @@
 \usepackage{caption}
 
-\DeclareCaptionLabelSeparator{dot}{. }
+\DeclareCaptionLabelSeparator{dot}{.}
 
 % #1 is the caption label
 % #2 is the separator
 % #3 is the text
 \DeclareCaptionFormat{mycaptionformat}{%
-	% #1#2~%
-	#3%
+	#1#2~#3%
 }
 
 % #1 is the name (pic, fig, ...)
 % #2 is the number
 \DeclareCaptionLabelFormat{mycaptionlabelformat}{%
-	% #1~#2%
+	#1\,#2%
 }
 
 \captionsetup{%
