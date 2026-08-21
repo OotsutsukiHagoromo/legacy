@@ -644,7 +644,13 @@
 \newenvironment{solution}{%
 	\ifmcn@showsolutions
 		\par\vspace{0.4em}%
-		\noindent{\sffamily\bfseries\color{mcnSecondary}Решение:}\par\vspace{0.2em}%
+		\noindent
+		\sffamily
+		\bfseries
+		\color{mcnSecondary}%
+		Решение:%
+		\par
+		\vspace{0.2em}%
 	\else
 		\expandafter\comment
 	\fi
@@ -661,9 +667,18 @@
 % Standard Proof environment wrapper
 \renewenvironment{proof}[1][Доказательство]{%
 	\par\vspace{0.4em}%
-	\noindent{\sffamily\bfseries\color{mcnPrimary}#1:}\quad\ignorespaces
+	\noindent
+	\sffamily
+	\bfseries
+	\color{mcnPrimary}%
+	#1:%
+	\quad
+	\ignorespaces
 }{%
-	\hfill$\blacksquare$\par\vspace{0.6em}%
+	\hfill
+	$\blacksquare$%
+	\par
+	\vspace{0.6em}%
 }
 
 % -------------------------------------------------------------------
@@ -690,10 +705,19 @@
 }
 
 \newenvironment{codebox}[1][Code Snippet]{%
-	\par\vspace{0.5em}%
-	\noindent{\small\sffamily\bfseries\color{mcnPrimary}#1}\par\vspace{0.3em}%
+	\par
+	\vspace{0.5em}%
+	\noindent
+	\small
+	\sffamily
+	\bfseries
+	\color{mcnPrimary}%
+	#1%
+	\par
+	\vspace{0.3em}%
 }{%
-	\par\vspace{0.5em}%
+	\par
+	\vspace{0.5em}%
 }
 
 % -------------------------------------------------------------------
@@ -725,10 +749,15 @@
 
 \newcommand{\mcnUnderline}[1]{%
   \savebox{\mcnUnderlineBox}{#1}%
-  \rlap{\raisebox{-\mcnUnderlineGap}{%
-    \color{mcnCalloutBorder}%
-    \transparent{\mcnUnderlineOpacity}{\rule{\wd\mcnUnderlineBox}{\mcnUnderlineThickness}}%
-  }}#1%
+  \rlap{%
+		\raisebox{-\mcnUnderlineGap}{%
+			\color{mcnCalloutBorder}%
+			\transparent{\mcnUnderlineOpacity}{%
+				\rule{\wd\mcnUnderlineBox}{\mcnUnderlineThickness}%
+			}%
+		}%
+	}%
+	#1%
 }
 
 % 🟆 Зачем?
@@ -737,7 +766,9 @@
 % Подчёркивание для \href (hyperref сам по себе не подчёркивает colorlinks)
 \AtBeginDocument{%
   \let\mcn@oldhref\href
-  \renewcommand{\href}[2]{\mcn@oldhref{#1}{\mcnUnderline{#2}}}
+  \renewcommand{\href}[2]{%
+		\mcn@oldhref{#1}{\mcnUnderline{#2}}%
+	}%
 }
 \urlstyle{same}
 
